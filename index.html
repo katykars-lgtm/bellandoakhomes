@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bell &amp; Oak Homes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Bell & Oak Homes buys, renovates and sells quality homes in the Greater Houston area. Text or call (346) 676-6533.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+html, body { margin: 0; }
+img { max-width: 100%; }
+
+/* Layout: a framed wall. Hero band carries 16-inch-on-center stud lines and a lumber grade stamp; content sits in one 68ch column below. */
+:root {
+  --bg: #EDEFE9;
+  --surface: #E2E6DC;
+  --ink: #17201A;
+  --muted: #535E56;
+  --rule: #C5CCC0;
+  --bronze: #85561A;
+  --hero-bg: #1B251F;
+  --hero-ink: #ECEFE7;
+  --hero-muted: #A9B3AA;
+  --hero-stud: rgba(236, 239, 231, 0.07);
+  --stamp: #D3A55C;
+  --f-display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111713; --surface: #18201B; --ink: #E5E9E1; --muted: #9AA49C; --rule: #2B362F;
+    --bronze: #D3A55C; --hero-bg: #0B100D; --hero-ink: #ECEFE7; --hero-muted: #9AA49C;
+    --hero-stud: rgba(236, 239, 231, 0.06); --stamp: #D3A55C; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111713; --surface: #18201B; --ink: #E5E9E1; --muted: #9AA49C; --rule: #2B362F;
+  --bronze: #D3A55C; --hero-bg: #0B100D; --hero-ink: #ECEFE7; --hero-muted: #9AA49C;
+  --hero-stud: rgba(236, 239, 231, 0.06); --stamp: #D3A55C; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 18px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--stamp); outline-offset: 3px; border-radius: 2px; }
+.wrap {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.col { max-width: 68ch; }
+
+/* Header + hero band */
+.hero {
+  background-color: var(--hero-bg);
+  background-image: repeating-linear-gradient(90deg, transparent 0, transparent 63px, var(--hero-stud) 63px, var(--hero-stud) 64px);
+  color: var(--hero-ink);
+}
+.topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding-block: 22px; }
+.mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.mark svg { width: 34px; height: 34px; flex: none; }
+.mark span { font-family: var(--f-display); font-stretch: 125%; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; }
+.topbar nav { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.04em; }
+.topbar nav a { color: var(--hero-muted); text-decoration: none; }
+.topbar nav a:hover { color: var(--hero-ink); }
+
+.hero-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: end; padding-block: 56px 72px; }
+.eyebrow { font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stamp); margin: 0 0 18px; }
+h1 {
+  font-family: var(--f-display); font-stretch: 125%; font-weight: 900;
+  font-size: clamp(38px, 7vw, 82px); line-height: 0.98; letter-spacing: -0.01em;
+  text-transform: uppercase; margin: 0; text-wrap: balance;
+}
+h1 .line { display: block; }
+h1 .line:nth-child(2) { color: var(--stamp); }
+.lede { font-size: clamp(19px, 2.2vw, 23px); line-height: 1.5; color: var(--hero-ink); max-width: 34ch; margin: 26px 0 0; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; margin-top: 34px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--f-display); font-stretch: 112%; font-weight: 700; font-size: 16px; letter-spacing: 0.02em;
+  text-decoration: none; padding: 14px 20px; border-radius: 3px; border: 2px solid var(--stamp);
+}
+.btn-solid { background: var(--stamp); color: #17201A; }
+.btn-line { color: var(--hero-ink); border-color: rgba(236,239,231,0.35); }
+.btn-line:hover { border-color: var(--hero-ink); }
+
+/* Lumber grade stamp */
+.stamp {
+  font-family: var(--f-mono); color: var(--stamp); border: 2px solid var(--stamp);
+  padding: 14px 18px; transform: rotate(-4deg); text-align: center; line-height: 1.25;
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.92; user-select: none;
+}
+.stamp b { display: block; font-family: var(--f-display); font-stretch: 125%; font-weight: 900; font-size: 30px; letter-spacing: 0.04em; margin: 4px 0; }
+.stamp .row { display: flex; justify-content: space-between; gap: 14px; border-top: 1px solid var(--stamp); padding-top: 6px; margin-top: 6px; }
+.oc { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--hero-muted); padding-bottom: 14px; }
+
+/* Content sections */
+main section { padding-block: 64px; border-top: 1px solid var(--rule); }
+main section:first-child { border-top: 0; }
+.label { font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze); margin: 0 0 12px; }
+h2 {
+  font-family: var(--f-display); font-stretch: 118%; font-weight: 800;
+  font-size: clamp(28px, 4vw, 40px); line-height: 1.08; margin: 0 0 20px; text-wrap: balance;
+}
+h3 { font-family: var(--f-display); font-stretch: 112%; font-weight: 700; font-size: 20px; line-height: 1.25; margin: 0 0 8px; }
+p { margin: 0 0 16px; }
+.muted { color: var(--muted); }
+
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 36px; border-top: 2px solid var(--ink); }
+.trio > div { padding: 22px 24px 8px 0; min-width: 0; }
+.trio > div + div { padding-left: 24px; border-left: 1px solid var(--rule); }
+.trio p { font-size: 17px; color: var(--muted); }
+
+.sell { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.sell ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.sell li { padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 17px; display: flex; gap: 12px; }
+.sell li::before { content: ""; width: 10px; height: 10px; margin-top: 9px; flex: none; background: var(--bronze); }
+
+.contact-card { background: var(--surface); padding: 32px; border-left: 4px solid var(--bronze); }
+.phone {
+  font-family: var(--f-display); font-stretch: 125%; font-weight: 900;
+  font-size: clamp(30px, 5.4vw, 48px); letter-spacing: 0.01em; line-height: 1.1; margin: 6px 0 18px;
+  font-variant-numeric: tabular-nums; user-select: all;
+}
+.contact-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.chip {
+  font-family: var(--f-mono); font-size: 14px; letter-spacing: 0.03em; padding: 10px 14px; border-radius: 3px;
+  border: 1px solid var(--ink); background: transparent; color: var(--ink); text-decoration: none; cursor: pointer;
+}
+.chip:hover { background: var(--ink); color: var(--bg); }
+.consent { font-size: 15px; line-height: 1.55; color: var(--muted); margin: 0; max-width: 62ch; }
+
+.legal h2 { margin-bottom: 6px; }
+.legal .eff { font-family: var(--f-mono); font-size: 13px; color: var(--muted); margin-bottom: 26px; }
+.legal h3 { font-size: 17px; margin-top: 26px; }
+.legal p, .legal li { font-size: 16.5px; }
+.legal ul { padding-left: 20px; margin: 0 0 16px; }
+.legal li { margin-bottom: 6px; }
+.legal .key { background: var(--surface); padding: 16px 20px; border-left: 3px solid var(--bronze); }
+
+footer { border-top: 2px solid var(--ink); padding-block: 28px 40px; font-family: var(--f-mono); font-size: 13px; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+
+@media (max-width: 760px) {
+  .hero-main { grid-template-columns: minmax(0, 1fr); padding-block: 36px 52px; }
+  .stamp { justify-self: start; transform: rotate(-3deg); }
+  .trio { grid-template-columns: minmax(0, 1fr); }
+  .trio > div, .trio > div + div { padding: 20px 0 6px; border-left: 0; border-top: 1px solid var(--rule); }
+  .trio > div:first-child { border-top: 0; }
+  .sell { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .contact-card { padding: 24px 20px; }
+  main section { padding-block: 48px; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="mark" href="#top" aria-label="Bell &amp; Oak Homes, top of page">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="37" height="37" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M20 8c-5.2 0-8 3.9-8 9v6.5L9 28h22l-3-4.5V17c0-5.1-2.8-9-8-9z" fill="currentColor"/>
+          <circle cx="20" cy="31.5" r="2.6" fill="currentColor"/>
+        </svg>
+        <span>Bell &amp; Oak Homes</span>
+      </a>
+      <nav aria-label="Page sections">
+        <a href="#what-we-do">What we do</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#sms-terms">Text terms</a>
+      </nav>
+    </div>
+    <div class="hero-main" id="top">
+      <div>
+        <p class="eyebrow">Homes built with intent</p>
+        <h1><span class="line">Deep roots.</span><span class="line">Fast hands.</span><span class="line">Quality homes.</span></h1>
+        <p class="lede">Built with intent for the families inside them and the communities around them.</p>
+        <div class="cta-row">
+          <a class="btn btn-solid" href="sms:+13466766533">Text (346) 676-6533</a>
+          <a class="btn btn-line" href="#what-we-do">See what we do</a>
+        </div>
+      </div>
+      <div class="stamp" aria-hidden="true">
+        Bell &amp; Oak
+        <b>No. 1</b>
+        Quality home
+        <div class="row"><span>KD-HT</span><span>Est. 2026</span></div>
+      </div>
+    </div>
+    <div class="oc" aria-hidden="true">16&#8243; O.C.</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="what-we-do">
+    <p class="label">What we do</p>
+    <div class="col">
+      <h2>We buy houses that need work and turn them into homes families want to live in.</h2>
+      <p class="muted">Bell &amp; Oak Homes is a local home investment and renovation company in the Greater Houston area. We move quickly, we do the work right, and we care about the streets we build on.</p>
+    </div>
+    <div class="trio">
+      <div>
+        <h3>We buy</h3>
+        <p>Homes in any condition, including foreclosures, short sales, inherited houses and homes with foundation problems. We make clear offers and close on your timeline.</p>
+      </div>
+      <div>
+        <h3>We renovate</h3>
+        <p>Every house gets rebuilt to a standard we would live in ourselves: sound structure, honest materials and finishes that hold up.</p>
+      </div>
+      <div>
+        <h3>We sell</h3>
+        <p>Finished homes go back on the market ready for a family to move in, with the work done right the first time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="selling">
+    <div class="sell">
+      <div class="col">
+        <p class="label">Selling a house?</p>
+        <h2>Tell us about it. You'll get a straight answer.</h2>
+        <p class="muted">If a house needs more work than you want to take on, or your timeline is tight, text us the address and a little about the situation. We'll look at it and tell you plainly whether it's a fit.</p>
+      </div>
+      <ul aria-label="Situations we can help with">
+        <li>Needs repairs or updates</li>
+        <li>Foundation or structural issues</li>
+        <li>Behind on payments or facing foreclosure</li>
+        <li>Inherited or vacant property</li>
+        <li>Need to sell quickly</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="label">Contact</p>
+    <h2>Text or call us.</h2>
+    <div class="contact-card">
+      <p class="muted" style="margin:0">Bell &amp; Oak Homes</p>
+      <p class="phone" id="phone-number">(346) 676-6533</p>
+      <div class="contact-actions">
+        <a class="chip" href="sms:+13466766533">Text us</a>
+        <a class="chip" href="tel:+13466766533">Call us</a>
+        <button class="chip" type="button" id="copy-phone">Copy number</button>
+      </div>
+      <p class="consent">By texting us at (346) 676-6533, you agree to receive text messages from Bell &amp; Oak Homes about your inquiry, including replies, appointment scheduling and customer support. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of any purchase or sale. See our <a href="#sms-terms">Text Messaging Terms</a> and <a href="#privacy">Privacy Policy</a>.</p>
+    </div>
+  </section>
+
+  <section id="privacy" class="legal">
+    <div class="col">
+      <p class="label">Legal</p>
+      <h2>Privacy Policy</h2>
+      <p class="eff">Effective November 19, 2026</p>
+      <p>Bell &amp; Oak Homes, operated by Doutex Homes LLC ("Bell &amp; Oak," "we," "us"), respects your privacy. This policy explains what information we collect when you contact us by phone, text message or this website, how we use it and the choices you have.</p>
+
+      <h3>Information we collect</h3>
+      <ul>
+        <li>Information you give us, such as your name, phone number, email address, property address and details about a property or your situation.</li>
+        <li>Records of calls and text messages with us, including dates, times and message content.</li>
+        <li>Basic technical information your browser sends when you visit this site, such as device type and pages viewed.</li>
+      </ul>
+
+      <h3>How we use it</h3>
+      <ul>
+        <li>To respond to your questions and requests.</li>
+        <li>To evaluate a property and discuss or make an offer.</li>
+        <li>To schedule appointments and property visits.</li>
+        <li>To send text messages you have agreed to receive.</li>
+        <li>To keep business records and meet legal obligations.</li>
+      </ul>
+
+      <h3>How we share it</h3>
+      <p>We do not sell or rent your personal information. We share it only with service providers that help us run our business, such as our phone and text messaging provider; with professionals working on a transaction you are part of, such as a title company, attorney or lender, when needed to complete it; or when the law requires it.</p>
+      <p class="key">No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All of the categories above exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
+
+      <h3>How we protect it</h3>
+      <p>We use reasonable administrative and technical safeguards to protect your information. No method of storage or transmission is perfectly secure, but we limit access to the people who need it to do their work.</p>
+
+      <h3>How long we keep it</h3>
+      <p>We keep your information as long as we need it for the purposes above, including any records the law requires us to keep.</p>
+
+      <h3>Your choices</h3>
+      <p>You can stop text messages at any time by replying STOP. You can ask us to update or delete the information we hold about you by calling or texting (346) 676-6533.</p>
+
+      <h3>Children</h3>
+      <p>Our services are meant for adults. We do not knowingly collect information from children under 13.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>We may update this policy from time to time. The effective date above shows when it last changed.</p>
+
+      <h3>Contact</h3>
+      <p>Questions about this policy: call or text Bell &amp; Oak Homes at (346) 676-6533.</p>
+    </div>
+  </section>
+
+  <section id="sms-terms" class="legal">
+    <div class="col">
+      <p class="label">Legal</p>
+      <h2>Text Messaging Terms</h2>
+      <p class="eff">Effective November 19, 2026</p>
+
+      <h3>Program</h3>
+      <p>Bell &amp; Oak Homes, operated by Doutex Homes LLC, sends text messages from (346) 676-6533 to people who contact us. Messages include replies to your questions, appointment scheduling and reminders, updates about a property or offer we are discussing with you, and customer support. We do not use this number to send marketing or promotional messages.</p>
+
+      <h3>How you opt in</h3>
+      <p>You opt in when you send a text message to (346) 676-6533, or when you give us your mobile number and agree to receive texts while speaking with us by phone or in person. Consent to receive text messages is not a condition of any purchase or sale.</p>
+
+      <h3>Message frequency</h3>
+      <p>Message frequency varies based on your conversation with us.</p>
+
+      <h3>Costs</h3>
+      <p>Message and data rates may apply. Check with your mobile carrier for details about your plan.</p>
+
+      <h3>How to opt out</h3>
+      <p>Reply <strong>STOP</strong> to any message at any time. You will receive one final message confirming you have been unsubscribed, and we will send no more texts unless you opt in again. To start again, reply <strong>START</strong>.</p>
+
+      <h3>Help</h3>
+      <p>Reply <strong>HELP</strong> to any message, or call (346) 676-6533.</p>
+
+      <h3>Carriers</h3>
+      <p>Mobile carriers are not liable for delayed or undelivered messages.</p>
+
+      <h3>Privacy</h3>
+      <p>Your mobile number and text messaging consent are not shared with third parties or affiliates for marketing purposes. See our <a href="#privacy">Privacy Policy</a> for how we handle your information.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Bell &amp; Oak Homes, operated by Doutex Homes LLC &middot; Greater Houston, Texas &middot; (346) 676-6533</span>
+    <nav aria-label="Legal">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#sms-terms">Text Messaging Terms</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-phone');
+  var num = document.getElementById('phone-number');
+  if (!btn || !num) return;
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy number'; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(num);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected';
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText('(346) 676-6533').then(done, fallback);
+      } else { fallback(); }
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
